@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarot Study</title>
+<meta name="theme-color" content="#14111f">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Tarot Study<span class="sub">Rider-Waite-Smith · Chapters &amp; Tests</span></div>
+</div>
+<div id="app">
+  <div id="view"></div>
+</div>
+<footer class="tabbar">
+  <button data-tab="home" onclick="location.hash='#/home'">Chapters</button>
+  <button data-tab="final" onclick="location.hash='#/finaltest'">Final Test</button>
+</footer>
+
+<script src="data_major.js"></script>
+<script src="data_wands.js"></script>
+<script src="data_cups.js"></script>
+<script src="data_swords.js"></script>
+<script src="data_pentacles.js"></script>
+<script src="data_spreads.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
